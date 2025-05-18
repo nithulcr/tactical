@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="zxx">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>tactical</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/my-style.css">
+
+	
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body class="body">
+	<header>
+		<div class="header-align">
+			<div class="logo">
+				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1850 373" fill="none"
+					preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+					<g style="mix-blend-mode:exclusion">
+						<path
+							d="M321.529 372.788C260.321 372.788 192.881 326.73 192.881 233.079C192.881 139.429 260.321 93.3857 321.529 93.3857C369.261 93.3857 397.27 119.259 401.42 129.088H402.974V100.626H483.378V372.788H402.974V337.085H401.42C397.27 346.914 369.261 372.788 321.529 372.788ZM338.129 301.383C373.396 301.383 405.042 277.06 405.042 233.079C405.042 189.099 373.396 164.776 338.129 164.776C302.862 164.776 272.243 189.611 272.243 233.079C272.243 276.548 303.888 301.383 338.129 301.383Z"
+							fill="currentColor"></path>
+						<path
+							d="M649.055 372.788C576.951 372.788 505.361 324.668 505.361 232.567C505.361 140.467 576.951 93.3857 649.055 93.3857C696.787 93.3857 738.8 115.12 765.254 159.613L707.154 197.377C694.191 179.782 674.996 165.814 649.055 165.814C614.301 165.814 584.723 191.688 584.723 232.567C584.723 273.447 614.286 300.345 649.055 300.345C674.996 300.345 694.191 286.377 707.154 268.782L765.254 306.546C738.8 350.015 696.772 372.773 649.055 372.773V372.788Z"
+							fill="currentColor"></path>
+						<path
+							d="M925.111 301.897C931.343 301.897 940.669 300.858 950.523 297.758V358.807C940.141 369.162 917.324 372.775 898.642 372.775C848.842 372.775 812.534 348.452 812.534 286.89V164.265H772.589V100.627H812.534V29.4862L892.952 0V100.627H949.497V164.265H892.952V273.961C892.952 287.417 900.739 301.897 925.111 301.897Z"
+							fill="currentColor"></path>
+						<path d="M972.535 372.791V100.629H1052.94V372.791H972.535Z" fill="currentColor"></path>
+						<path
+							d="M1218.67 372.788C1146.56 372.788 1074.97 324.668 1074.97 232.567C1074.97 140.467 1146.56 93.3857 1218.67 93.3857C1266.4 93.3857 1308.41 115.12 1334.86 159.613L1276.76 197.377C1263.8 179.782 1244.61 165.814 1218.67 165.814C1183.91 165.814 1154.33 191.688 1154.33 232.567C1154.33 273.447 1183.9 300.345 1218.67 300.345C1244.61 300.345 1263.8 286.377 1276.76 268.782L1334.86 306.546C1308.41 350.015 1266.38 372.773 1218.67 372.773V372.788Z"
+							fill="currentColor"></path>
+						<path d="M1655.34 372.789V29.4862L1735.74 0V372.789H1655.34Z" fill="currentColor"></path>
+						<path
+							d="M1012.77 80.1948C991.297 80.1948 972.556 64.2523 972.556 40.0901C972.556 15.9278 991.297 0 1012.77 0C1034.23 0 1052.96 15.9424 1052.96 40.0901C1052.96 64.2377 1034.22 80.1948 1012.77 80.1948Z"
+							fill="currentColor"></path>
+						<path
+							d="M152.75 301.897C158.983 301.897 168.309 300.858 178.163 297.758V358.807C167.781 369.162 144.964 372.775 126.282 372.775C76.4822 372.775 40.1737 348.452 40.1737 286.89V164.265H0.228516V100.627H40.1737V29.4862L120.577 0V100.627H177.122V164.265H120.577V273.961C120.577 287.417 128.364 301.897 152.736 301.897H152.75Z"
+							fill="currentColor"></path>
+						<path
+							d="M1470.85 372.776C1409.64 372.776 1342.2 326.719 1342.2 233.068C1342.2 139.417 1409.64 93.3741 1470.85 93.3741C1518.58 93.3741 1546.59 119.248 1550.74 129.076H1552.29V100.629H1632.7V372.776H1552.29V337.074H1550.74C1546.59 346.902 1518.58 372.776 1470.85 372.776ZM1487.45 301.372C1522.71 301.372 1554.36 277.048 1554.36 233.068C1554.36 189.087 1522.71 164.764 1487.45 164.764C1452.18 164.764 1421.56 189.599 1421.56 233.068C1421.56 276.536 1453.21 301.372 1487.45 301.372Z"
+							fill="currentColor"></path>
+						<path
+							d="M1803.36 372.789C1778.97 372.789 1757.69 354.682 1757.69 327.258C1757.69 299.834 1778.97 281.727 1803.36 281.727C1827.74 281.727 1849.01 299.834 1849.01 327.258C1849.01 354.682 1827.73 372.789 1803.36 372.789Z"
+							fill="currentColor"></path>
+					</g>
+				</svg>
+			</div>
+			<div class="header-right">
+				<div class="nav">
+					<a href="#about" class="nav-items">about us</a>
+					<a href="#partners" class="nav-items">partners</a>
+					<a href="#services" class="nav-items">Services</a>
+					<a href="#careers" class="nav-items">careers</a>
+					<a href="#contact" class="nav-items">Contact</a>
+				</div>
+
+			</div>
+			<div class="menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</header>
+	<div class="site-body">
+		<div id="home-sec" class="home">
+			<div class="home-main">
+				<video id="f1992114-0ff8-0569-9879-b3ec9e68fc99-video" autoplay="" loop=""
+					style="background-image:url(&quot;https://global-uploads.webflow.com/64f47469f86ad4f417598c71/650894aea4e3c8f31b6bf69b_WhatsApp Video 2023-09-18 at 101203-poster-00001.jpg&quot;)"
+					muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+					<source
+						src="https://global-uploads.webflow.com/64f47469f86ad4f417598c71/650894aea4e3c8f31b6bf69b_WhatsApp Video 2023-09-18 at 101203-transcode.mp4"
+						data-wf-ignore="true">
+					<source
+						src="https://global-uploads.webflow.com/64f47469f86ad4f417598c71/650894aea4e3c8f31b6bf69b_WhatsApp Video 2023-09-18 at 101203-transcode.webm"
+						data-wf-ignore="true">
+				</video>
+
+
+			</div>
+			<div class="banner-logo">
+				<svg xmlns="http://www.w3.org/2000/svg" class="logo-svg" data-aos="fade-up" data-aos-delay="400" width="100%" height="100%"
+					viewBox="0 0 1850 373" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true"
+					role="img">
+					<g style="mix-blend-mode:exclusion">
+						<path
+							d="M321.529 372.788C260.321 372.788 192.881 326.73 192.881 233.079C192.881 139.429 260.321 93.3857 321.529 93.3857C369.261 93.3857 397.27 119.259 401.42 129.088H402.974V100.626H483.378V372.788H402.974V337.085H401.42C397.27 346.914 369.261 372.788 321.529 372.788ZM338.129 301.383C373.396 301.383 405.042 277.06 405.042 233.079C405.042 189.099 373.396 164.776 338.129 164.776C302.862 164.776 272.243 189.611 272.243 233.079C272.243 276.548 303.888 301.383 338.129 301.383Z"
+							fill="currentColor"></path>
+						<path
+							d="M649.055 372.788C576.951 372.788 505.361 324.668 505.361 232.567C505.361 140.467 576.951 93.3857 649.055 93.3857C696.787 93.3857 738.8 115.12 765.254 159.613L707.154 197.377C694.191 179.782 674.996 165.814 649.055 165.814C614.301 165.814 584.723 191.688 584.723 232.567C584.723 273.447 614.286 300.345 649.055 300.345C674.996 300.345 694.191 286.377 707.154 268.782L765.254 306.546C738.8 350.015 696.772 372.773 649.055 372.773V372.788Z"
+							fill="currentColor"></path>
+						<path
+							d="M925.111 301.897C931.343 301.897 940.669 300.858 950.523 297.758V358.807C940.141 369.162 917.324 372.775 898.642 372.775C848.842 372.775 812.534 348.452 812.534 286.89V164.265H772.589V100.627H812.534V29.4862L892.952 0V100.627H949.497V164.265H892.952V273.961C892.952 287.417 900.739 301.897 925.111 301.897Z"
+							fill="currentColor"></path>
+						<path d="M972.535 372.791V100.629H1052.94V372.791H972.535Z" fill="currentColor"></path>
+						<path
+							d="M1218.67 372.788C1146.56 372.788 1074.97 324.668 1074.97 232.567C1074.97 140.467 1146.56 93.3857 1218.67 93.3857C1266.4 93.3857 1308.41 115.12 1334.86 159.613L1276.76 197.377C1263.8 179.782 1244.61 165.814 1218.67 165.814C1183.91 165.814 1154.33 191.688 1154.33 232.567C1154.33 273.447 1183.9 300.345 1218.67 300.345C1244.61 300.345 1263.8 286.377 1276.76 268.782L1334.86 306.546C1308.41 350.015 1266.38 372.773 1218.67 372.773V372.788Z"
+							fill="currentColor"></path>
+						<path d="M1655.34 372.789V29.4862L1735.74 0V372.789H1655.34Z" fill="currentColor"></path>
+						<path
+							d="M1012.77 80.1948C991.297 80.1948 972.556 64.2523 972.556 40.0901C972.556 15.9278 991.297 0 1012.77 0C1034.23 0 1052.96 15.9424 1052.96 40.0901C1052.96 64.2377 1034.22 80.1948 1012.77 80.1948Z"
+							fill="currentColor"></path>
+						<path
+							d="M152.75 301.897C158.983 301.897 168.309 300.858 178.163 297.758V358.807C167.781 369.162 144.964 372.775 126.282 372.775C76.4822 372.775 40.1737 348.452 40.1737 286.89V164.265H0.228516V100.627H40.1737V29.4862L120.577 0V100.627H177.122V164.265H120.577V273.961C120.577 287.417 128.364 301.897 152.736 301.897H152.75Z"
+							fill="currentColor"></path>
+						<path
+							d="M1470.85 372.776C1409.64 372.776 1342.2 326.719 1342.2 233.068C1342.2 139.417 1409.64 93.3741 1470.85 93.3741C1518.58 93.3741 1546.59 119.248 1550.74 129.076H1552.29V100.629H1632.7V372.776H1552.29V337.074H1550.74C1546.59 346.902 1518.58 372.776 1470.85 372.776ZM1487.45 301.372C1522.71 301.372 1554.36 277.048 1554.36 233.068C1554.36 189.087 1522.71 164.764 1487.45 164.764C1452.18 164.764 1421.56 189.599 1421.56 233.068C1421.56 276.536 1453.21 301.372 1487.45 301.372Z"
+							fill="currentColor"></path>
+						<path
+							d="M1803.36 372.789C1778.97 372.789 1757.69 354.682 1757.69 327.258C1757.69 299.834 1778.97 281.727 1803.36 281.727C1827.74 281.727 1849.01 299.834 1849.01 327.258C1849.01 354.682 1827.73 372.789 1803.36 372.789Z"
+							fill="currentColor"></path>
+					</g>
+					<ellipse cx="200" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+				</svg>
+				<div class="hero-scribble"><svg xmlns="http://www.w3.org/2000/svg" data-aos="fade-right"
+						data-aos-delay="600" width="100%" height="100%" viewBox="0 0 1718 491" fill="none"
+						preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+						<g style="mix-blend-mode:exclusion">
+							<path
+								d="M-16.9136 489.299C-13.7043 477.36 -5.83596 467.019 1.39852 457.243C43.77 399.988 94.4031 349.142 146.141 300.466C235.078 216.791 328.218 136.876 425.213 62.6901C443.224 48.9141 468.997 30.0855 488.657 16.8407C493.638 13.4846 498.753 10.3267 503.898 7.22779C507.233 5.21897 513.309 -0.736034 514.741 2.88927C516.507 7.35998 511.638 12.0137 509.522 16.3273C498.984 37.8054 487.145 58.6916 474.575 79.0365C428.926 152.924 376.324 222.171 327.881 294.184C309.913 320.894 295.181 343.004 280.193 371.115C268.836 392.416 255.88 418.287 255.26 443.278C254.361 479.541 297.141 475.496 321.305 470.62C424.963 449.704 521.157 368.403 574.905 278.924C577.444 274.696 583.23 269.082 580.273 265.133C579.473 264.066 577.58 264.865 576.276 265.137C570.489 266.348 561.015 270.737 556.471 272.915C519.43 290.672 485.849 316.475 456.281 344.81C431.115 368.927 401.233 398.897 388.327 432.204C380.282 452.967 401.408 445.75 412.715 440.541C476.204 411.297 533.66 365.59 585.971 319.989C636.077 276.311 682.012 228.251 727.382 179.752C729.311 177.691 744.755 161.399 732.435 173.379C711.446 193.79 692.342 215.975 675.16 239.694C671.687 244.488 633.087 294.467 640.447 301.926C647.309 308.88 660.097 301.809 669.653 299.823C723.543 288.625 776.837 273.126 829.419 257.044C920.337 229.236 1009.59 196.465 1098.89 163.929C1099.35 163.76 1149.24 141.726 1150.06 150.066C1152.29 172.865 1150.33 197.066 1147.44 219.707C1145.34 236.216 1144.54 259.675 1167.46 258.417C1202.3 256.504 1238.33 234.155 1268.45 219.047C1339.63 183.338 1410.5 147.803 1485.42 120.354C1530.51 103.833 1581.51 84.119 1630.3 82.2506C1643.38 81.7496 1649.9 87.5531 1660.57 93.6864C1677.66 103.514 1696.98 102.138 1715.93 100.667"
+								stroke="currentColor" stroke-width="3" stroke-linecap="round" id="pathToAnimate1"
+								style="stroke-dashoffset: 0px; stroke-dasharray: 3805.57;"></path>
+						</g>
+					</svg>
+				</div>
+
+			</div>
+
+		</div>
+		
+			<div id="about" class="about">
+				<div class="about-shap1">
+					<img
+						src="https://global-uploads.webflow.com/64f47469f86ad4f417598c71/64f874bd99ed4c91d4bab7db_blob-orange.webp">
+				</div>
+				<div class="about-shap2">
+					<img
+						src="https://global-uploads.webflow.com/64f47469f86ad4f417598c71/64f874bd99ed4c91d4bab7db_blob-orange.webp">
+				</div>
+				<div class="glob-shap">
+					<img
+						src="https://global-uploads.webflow.com/64f47469f86ad4f417598c71/64f7c0f62bea851226c936ca_GLOBE.svg">
+				</div>
+				<div class="about-texts">
+					<div class="about-head">
+						<div data-aos="fade-up"><span>we're a</span> <span>global</span> <span class="nunum-font">creative &</span></div>
+						<div class="flex-align" style="font-size: 5vw;" data-aos="fade-up" data-aos-delay="200">
+							<span class="nunum-font">innovation</span>
+							<div> studio</div>
+						</div>
+					</div>
+					<div class="about-bottom-text" data-aos="fade-up">
+						Born from social and inspired by culture, we’re champions of
+						storytelling across the platforms and technologies that shape the
+						internet; today and tomorrow. We work with global brands to
+						connect the dots in a maze of swipe, tap, forgettable.
+					</div>
+				</div>
+
+			</div>
+			
+			
+			<div id="partners" class="partners">
+
+				<div class="marque-main">
+					<div class="partners-shap">
+						<img
+							src="https://global-uploads.webflow.com/64f47469f86ad4f417598c71/64f874bd99ed4c91d4bab7db_blob-orange.webp">
+					</div>
+					<div class="marquee-photo_panel w-dyn-items">
+						<div class="marquee-photo_item w-dyn-item"><img alt=""
+								src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/64feed591fbdf8e463c4d621_Epic%20Games.svg"
+								class="marquee_img"></div>
+						<div class="marquee-photo_item w-dyn-item"><img alt=""
+								src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/64feed368ac8b5f30f5c8792_NFL.svg"
+								class="marquee_img"></div>
+						<div class="marquee-photo_item w-dyn-item"><img alt=""
+								src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/64feed1ea943fe4c81ba0c8f_Group%20125.svg"
+								class="marquee_img"></div>
+						<div class="marquee-photo_item w-dyn-item"><img alt=""
+								src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/64feecfaa943fe4c81b9cf20_Group%20123.svg"
+								class="marquee_img"></div>
+						<div class="marquee-photo_item w-dyn-item"><img alt=""
+								src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/65003f314c1aa0109937926d_jumeira.png"
+								class="marquee_img"></div>
+						<div class="marquee-photo_item w-dyn-item"><img alt=""
+								src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/64feed591fbdf8e463c4d621_Epic%20Games.svg"
+								class="marquee_img"></div>
+						<div class="marquee-photo_item w-dyn-item"><img alt=""
+								src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/64feed368ac8b5f30f5c8792_NFL.svg"
+								class="marquee_img"></div>
+						<div class="marquee-photo_item w-dyn-item"><img alt=""
+								src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/64feed1ea943fe4c81ba0c8f_Group%20125.svg"
+								class="marquee_img"></div>
+						<div class="marquee-photo_item w-dyn-item"><img alt=""
+								src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/64feecfaa943fe4c81b9cf20_Group%20123.svg"
+								class="marquee_img"></div>
+						<div class="marquee-photo_item w-dyn-item"><img alt=""
+								src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/65003f314c1aa0109937926d_jumeira.png"
+								class="marquee_img"></div>
+					</div>
+					<div class="marquee-photo_panel w-dyn-items">
+						<div class="marquee-photo_item w-dyn-item"><img alt=""
+								src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/64feed591fbdf8e463c4d621_Epic%20Games.svg"
+								class="marquee_img"></div>
+						<div class="marquee-photo_item w-dyn-item"><img alt=""
+								src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/64feed368ac8b5f30f5c8792_NFL.svg"
+								class="marquee_img"></div>
+						<div class="marquee-photo_item w-dyn-item"><img alt=""
+								src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/64feed1ea943fe4c81ba0c8f_Group%20125.svg"
+								class="marquee_img"></div>
+						<div class="marquee-photo_item w-dyn-item"><img alt=""
+								src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/64feecfaa943fe4c81b9cf20_Group%20123.svg"
+								class="marquee_img"></div>
+						<div class="marquee-photo_item w-dyn-item"><img alt=""
+								src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/65003f314c1aa0109937926d_jumeira.png"
+								class="marquee_img"></div>
+						<div class="marquee-photo_item w-dyn-item"><img alt=""
+								src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/64feed591fbdf8e463c4d621_Epic%20Games.svg"
+								class="marquee_img"></div>
+						<div class="marquee-photo_item w-dyn-item"><img alt=""
+								src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/64feed368ac8b5f30f5c8792_NFL.svg"
+								class="marquee_img"></div>
+						<div class="marquee-photo_item w-dyn-item"><img alt=""
+								src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/64feed1ea943fe4c81ba0c8f_Group%20125.svg"
+								class="marquee_img"></div>
+						<div class="marquee-photo_item w-dyn-item"><img alt=""
+								src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/64feecfaa943fe4c81b9cf20_Group%20123.svg"
+								class="marquee_img"></div>
+						<div class="marquee-photo_item w-dyn-item"><img alt=""
+								src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/65003f314c1aa0109937926d_jumeira.png"
+								class="marquee_img"></div>
+					</div>
+
+				</div>
+				<div class="partners-text">
+					<div class="partners-head">
+						<div data-aos="fade-up" >we partner with the platforms that</div>
+
+						<div data-aos="fade-up" data-aos-delay="200">
+							<span class="nunum-font">shape the internet</span>
+							& <img
+								src="https://global-uploads.webflow.com/64f47469f86ad4f417598c71/64ff0ad786c787d72019665a_arrow.svg">
+
+							<div>Culture</div>
+						</div>
+					</div>
+					<div class="icon-wrapper" data-aos="zoom-in" data-aos-duration="3000">
+						<img  
+							src="https://global-uploads.webflow.com/64f47469f86ad4f417598c71/64ff0f40b5fa37c0eb0e5018_clipart4602219%201.svg"
+							 alt="" class="partner-sec-icon _2"
+							style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0%);">
+						<img src="https://global-uploads.webflow.com/64f47469f86ad4f417598c71/64ff0f40458b7ce85b2393d4_Group%20139.svg"
+							 alt="" class="partner-sec-icon _3"
+							style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0%);">
+						<img src="https://global-uploads.webflow.com/64f47469f86ad4f417598c71/64ff53e8b56218d7dd489bf7_tactical-partner-2.png"
+							 alt="" class="partner-sec-icon _8"
+							style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0%);">
+						<img src="https://global-uploads.webflow.com/64f47469f86ad4f417598c71/64ff0f403b5217719ba7fadb_Group%20137.svg"
+							 alt="" class="partner-sec-icon _4"
+							style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0%);">
+						<img src="https://global-uploads.webflow.com/64f47469f86ad4f417598c71/6501c758fec712e53c09c545_TikTok%20PARTNER.png"
+							 alt="" class="partner-sec-icon _6"
+							style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0%);">
+						<img src="https://global-uploads.webflow.com/64f47469f86ad4f417598c71/64ff0f4081a9f032edca4fc5_Group%20142.svg"
+							 alt="" class="partner-sec-icon _5"
+							style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0%);">
+						<img src="https://global-uploads.webflow.com/64f47469f86ad4f417598c71/64ff0f4129bc3c9db5bb7bd3_Group%20138.svg"
+							 alt="" class="partner-sec-icon _1"
+							style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0%);">
+					</div>
+					<div class="about-shap1">
+						<img
+							src="https://global-uploads.webflow.com/64f47469f86ad4f417598c71/64f874bd99ed4c91d4bab7db_blob-orange.webp">
+					</div>
+					<div class="about-shap2">
+						<img
+							src="https://global-uploads.webflow.com/64f47469f86ad4f417598c71/64f874bd99ed4c91d4bab7db_blob-orange.webp">
+					</div>
+				</div>
+			</div>
+			<div id="services" class="services">
+
+				<!-- <div class="about-shap2">
+					<img
+						src="https://global-uploads.webflow.com/64f47469f86ad4f417598c71/64f874bd99ed4c91d4bab7db_blob-orange.webp">
+				</div> -->
+				<div class="services-text">
+					<div class="services-head">
+						<div data-aos="zoom-in" data-aos-duration="3000"><span class="nunum-font">our</span> services</div>
+					</div>
+					
+				</div>
+				<div class="services-list" data-aos="fade-up">
+
+					
+					<div>
+						<div class="service-image-wrapper " >
+							<img src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/64f87d80beeac44517edddb6_Vector%209.png" class="services-shape">
+							<img alt="" loading="eager" src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/650344318e5fe7a621e32f77_Brain.png" class="service-image">
+
+
+						</div>
+						<div  class="service-head1">
+							<div>Distribution</div>
+						</div>
+					</div>
+					<p>Discovery Workshops<br>Research &amp; Insights<br>Creative Strategy<br>Campaign Planning</p>
+
+				</div>
+				<div class="services-list" data-aos="fade-up"> 
+
+					
+					<div>
+						<div class="service-image-wrapper " >
+							<img src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/64f87d8c5cc8e8cee46be412_Vector%209-1-p-500.png" class="services-shape">
+							<img alt="" loading="eager" src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/6501e10bf470c79def14bd52_kal-visuals-3UcQtXSvA88-unsplash-p-500.png" class="service-image">
+
+
+						</div>
+						<div  class="service-head1">
+							<div>Distribution</div>
+						</div>
+					</div>
+					<p>Design<br>Motion Graphics<br>Vertical Production<br>PRISM: Creative at Scale</p>
+				</div>
+				<div class="services-list" data-aos="fade-up">
+					<div>
+						<div class="service-image-wrapper " >
+							<img src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/64f87ddb4d4922ee0eae7084_Vector%209-3.png" class="services-shape">
+
+							<img alt="" loading="eager" src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/64ff52b43c420f8d8e699efc_tactical-distribution.png" class="service-image">
+						</div>
+						<div  class="service-head1">
+							<div>Distribution</div>
+						</div>
+					</div>
+					<p>Always-on Social<br>Media Strategy<br>Media Buying<br>Reporting &amp; Insights</p>
+				</div>
+				<div class="services-list" data-aos="fade-up">
+
+					
+					<div>
+						<div class="service-image-wrapper " >
+							<img src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/64f87d99fdbd5383e9c819a0_Vector%209-2-p-800.png" class="services-shape">
+							<img alt="" loading="eager" src="https://global-uploads.webflow.com/64f48ecf39f5ae1e3738011a/65030338f4cfe61cfec23b52_pink%20(2).png" class="service-image">
+
+
+						</div>
+						<div  class="service-head1">
+							<div>Distribution</div>
+						</div>
+					</div>
+					<p>Mixed Reality<br>Immerse Experiences<br>Gaming / Virtual Worlds<br>AI</p>
+				</div>
+			</div>
+			<div id="careers" class="careers">
+
+				<div class="careers-text">
+					<div class="careers-head">
+						<div data-aos="fade-up" >celebreting</div>
+
+						<div data-aos="fade-up" data-aos-delay="200">
+							people
+							<span class="nunum-font">Culture</span>
+							
+							<div>and good vibes</div>
+						</div>
+					</div>
+					<a class="button-site" data-aos="fade-up"> 
+						<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M11.9725 0C18.5803 0 23.945 5.36475 23.945 11.9725C23.945 18.5803 18.5803 23.945 11.9725 23.945C5.36475 23.945 0 18.5803 0 11.9725C0 5.36475 5.36475 0 11.9725 0ZM5.58717 12.7534V11.1916H15.3685L12.6667 8.48985L13.7708 7.38545L18.3579 11.9725L13.7708 16.5596L12.6667 15.4552L15.3685 12.7534H5.58717Z" fill="currentColor"></path>
+						</svg>
+						Join our crew
+					</a>
+					
+					<div class="about-shap1">
+						<img
+							src="https://global-uploads.webflow.com/64f47469f86ad4f417598c71/64f874bd99ed4c91d4bab7db_blob-orange.webp">
+					</div>
+					<div class="about-shap2">
+						<img
+							src="https://global-uploads.webflow.com/64f47469f86ad4f417598c71/64f874bd99ed4c91d4bab7db_blob-orange.webp">
+					</div>
+				</div>
+			</div>
+			<div id="contact" class="contact">
+				<div class="contact-container">
+					<div class="contact-text">
+						<div class="contact-head">
+							<div data-aos="fade-up" >Shaping the</div>
+
+							<div data-aos="fade-up" data-aos-delay="200">
+								future of
+								
+							</div>
+							<div data-aos="fade-up" data-aos-delay="300">
+								Culture,
+								<span class="nunum-font">today</span>
+							</div>
+						</div>
+						
+						<div class="contact-sign" data-aos="fade-up" data-aos-delay="500">
+							<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1718 491" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+							<g style="mix-blend-mode:exclusion">
+							<path d="M-16.9136 489.299C-13.7043 477.36 -5.83596 467.019 1.39852 457.243C43.77 399.988 94.4031 349.142 146.141 300.466C235.078 216.791 328.218 136.876 425.213 62.6901C443.224 48.9141 468.997 30.0855 488.657 16.8407C493.638 13.4846 498.753 10.3267 503.898 7.22779C507.233 5.21897 513.309 -0.736034 514.741 2.88927C516.507 7.35998 511.638 12.0137 509.522 16.3273C498.984 37.8054 487.145 58.6916 474.575 79.0365C428.926 152.924 376.324 222.171 327.881 294.184C309.913 320.894 295.181 343.004 280.193 371.115C268.836 392.416 255.88 418.287 255.26 443.278C254.361 479.541 297.141 475.496 321.305 470.62C424.963 449.704 521.157 368.403 574.905 278.924C577.444 274.696 583.23 269.082 580.273 265.133C579.473 264.066 577.58 264.865 576.276 265.137C570.489 266.348 561.015 270.737 556.471 272.915C519.43 290.672 485.849 316.475 456.281 344.81C431.115 368.927 401.233 398.897 388.327 432.204C380.282 452.967 401.408 445.75 412.715 440.541C476.204 411.297 533.66 365.59 585.971 319.989C636.077 276.311 682.012 228.251 727.382 179.752C729.311 177.691 744.755 161.399 732.435 173.379C711.446 193.79 692.342 215.975 675.16 239.694C671.687 244.488 633.087 294.467 640.447 301.926C647.309 308.88 660.097 301.809 669.653 299.823C723.543 288.625 776.837 273.126 829.419 257.044C920.337 229.236 1009.59 196.465 1098.89 163.929C1099.35 163.76 1149.24 141.726 1150.06 150.066C1152.29 172.865 1150.33 197.066 1147.44 219.707C1145.34 236.216 1144.54 259.675 1167.46 258.417C1202.3 256.504 1238.33 234.155 1268.45 219.047C1339.63 183.338 1410.5 147.803 1485.42 120.354C1530.51 103.833 1581.51 84.119 1630.3 82.2506C1643.38 81.7496 1649.9 87.5531 1660.57 93.6864C1677.66 103.514 1696.98 102.138 1715.93 100.667" stroke="currentColor" stroke-width="3" stroke-linecap="round" id="pathToAnimate2" style="stroke-dashoffset: 15px; stroke-dasharray: 3805.57;"></path>
+							</g>
+							</svg>
+						</div>
+						
+					</div>
+					<div class="contact-text2">
+						<div class="contact-head2">
+							<div data-aos="fade-up" >Let's work
+								<span class="nunum-font" data-aos="fade-up" data-aos-delay="100">
+									together
+									
+								</span>
+							</div>
+						</div>
+						<div class="form" data-aos="fade-up">
+							<input placeholder="NAME">
+							<input placeholder="Email">
+							<input placeholder="Your thoughts">
+
+
+						</div>
+						<a class="button-site" data-aos="fade-up"> 
+							<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M11.9725 0C18.5803 0 23.945 5.36475 23.945 11.9725C23.945 18.5803 18.5803 23.945 11.9725 23.945C5.36475 23.945 0 18.5803 0 11.9725C0 5.36475 5.36475 0 11.9725 0ZM5.58717 12.7534V11.1916H15.3685L12.6667 8.48985L13.7708 7.38545L18.3579 11.9725L13.7708 16.5596L12.6667 15.4552L15.3685 12.7534H5.58717Z" fill="currentColor"></path>
+							</svg>
+							Send It
+						</a>
+					</div>
+				</div>
+				<div class="contact-footer">
+					<div>
+						<a class="button-site"> 
+							<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M11.9725 0C18.5803 0 23.945 5.36475 23.945 11.9725C23.945 18.5803 18.5803 23.945 11.9725 23.945C5.36475 23.945 0 18.5803 0 11.9725C0 5.36475 5.36475 0 11.9725 0ZM5.58717 12.7534V11.1916H15.3685L12.6667 8.48985L13.7708 7.38545L18.3579 11.9725L13.7708 16.5596L12.6667 15.4552L15.3685 12.7534H5.58717Z" fill="currentColor"></path>
+							</svg>
+							our crib
+						</a>
+						<a>
+							<svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 3C3.67157 3 3 3.67157 3 4.5V19.5C3 20.3284 3.67157 21 4.5 21H19.5C20.3284 21 21 20.3284 21 19.5V4.5C21 3.67157 20.3284 3 19.5 3H4.5ZM8.52076 7.00272C8.52639 7.95897 7.81061 8.54819 6.96123 8.54397C6.16107 8.53975 5.46357 7.90272 5.46779 7.00413C5.47201 6.15897 6.13998 5.47975 7.00764 5.49944C7.88795 5.51913 8.52639 6.1646 8.52076 7.00272ZM12.2797 9.76176H9.75971H9.7583V18.3216H12.4217V18.1219C12.4217 17.742 12.4214 17.362 12.4211 16.9819V16.9818V16.9816V16.9815V16.9812C12.4203 15.9674 12.4194 14.9532 12.4246 13.9397C12.426 13.6936 12.4372 13.4377 12.5005 13.2028C12.7381 12.3253 13.5271 11.7586 14.4074 11.8979C14.9727 11.9864 15.3467 12.3141 15.5042 12.8471C15.6013 13.1803 15.6449 13.5389 15.6491 13.8863C15.6605 14.9339 15.6589 15.9815 15.6573 17.0292V17.0294C15.6567 17.3992 15.6561 17.769 15.6561 18.1388V18.3202H18.328V18.1149C18.328 17.6629 18.3278 17.211 18.3275 16.7591V16.759V16.7588C18.327 15.6293 18.3264 14.5001 18.3294 13.3702C18.3308 12.8597 18.276 12.3563 18.1508 11.8627C17.9638 11.1286 17.5771 10.5211 16.9485 10.0824C16.5027 9.77019 16.0133 9.5691 15.4663 9.5466C15.404 9.54401 15.3412 9.54062 15.2781 9.53721L15.2781 9.53721L15.2781 9.53721C14.9984 9.52209 14.7141 9.50673 14.4467 9.56066C13.6817 9.71394 13.0096 10.0641 12.5019 10.6814C12.4429 10.7522 12.3852 10.8241 12.2991 10.9314L12.2991 10.9315L12.2797 10.9557V9.76176ZM5.68164 18.3244H8.33242V9.76733H5.68164V18.3244Z" fill="CurrentColor"></path>
+								</svg>
+						</a>
+						<a>
+							<svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M16 3H8C5.23858 3 3 5.23858 3 8V16C3 18.7614 5.23858 21 8 21H16C18.7614 21 21 18.7614 21 16V8C21 5.23858 18.7614 3 16 3ZM19.25 16C19.2445 17.7926 17.7926 19.2445 16 19.25H8C6.20735 19.2445 4.75549 17.7926 4.75 16V8C4.75549 6.20735 6.20735 4.75549 8 4.75H16C17.7926 4.75549 19.2445 6.20735 19.25 8V16ZM16.75 8.25C17.3023 8.25 17.75 7.80228 17.75 7.25C17.75 6.69772 17.3023 6.25 16.75 6.25C16.1977 6.25 15.75 6.69772 15.75 7.25C15.75 7.80228 16.1977 8.25 16.75 8.25ZM12 7.5C9.51472 7.5 7.5 9.51472 7.5 12C7.5 14.4853 9.51472 16.5 12 16.5C14.4853 16.5 16.5 14.4853 16.5 12C16.5027 10.8057 16.0294 9.65957 15.1849 8.81508C14.3404 7.97059 13.1943 7.49734 12 7.5ZM9.25 12C9.25 13.5188 10.4812 14.75 12 14.75C13.5188 14.75 14.75 13.5188 14.75 12C14.75 10.4812 13.5188 9.25 12 9.25C10.4812 9.25 9.25 10.4812 9.25 12Z" fill="CurrentColor"></path>
+								</svg>
+						</a>
+						<a>
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--bx" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74a2.89 2.89 0 0 1 2.31-4.64a2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" fill="currentColor"></path></svg>
+						</a>
+						<a>
+							<svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M17.1761 4H19.9362L13.9061 10.7774L21 20H15.4456L11.0951 14.4066L6.11723 20H3.35544L9.80517 12.7508L3 4H8.69545L12.6279 9.11262L17.1761 4ZM16.2073 18.3754H17.7368L7.86441 5.53928H6.2232L16.2073 18.3754Z" fill="CurrentColor"></path>
+								</svg>
+						</a>
+					</div>
+					<h6>All rights reserved ®</h6>
+
+				</div>
+				<div class="about-shap1">
+					<img
+						src="https://global-uploads.webflow.com/64f47469f86ad4f417598c71/64f874bd99ed4c91d4bab7db_blob-orange.webp">
+				</div>
+				<div class="about-shap2">
+					<img
+						src="https://global-uploads.webflow.com/64f47469f86ad4f417598c71/64f874bd99ed4c91d4bab7db_blob-orange.webp">
+				</div>
+			</div>
+		
+
+	</div>
+		
+
+	<script>
+		$(document).ready(function() {
+    AOS.init();
+});
+		</script>
+		<script>
+			$(".menu").on('click', function () {
+
+				var selector = $(".header-right")
+
+				if (selector.hasClass('open')) {
+
+					selector.removeClass('open');
+				} else {
+
+					selector.addClass('open');
+				}
+			});
+		</script>
+
+<script>
+	$(window).scroll(function () {
+		var scroll = $(window).scrollTop();
+
+		if (scroll >= 100) {
+			$(".body").addClass("scroll-start");
+		} else {
+			$(".body").removeClass("scroll-start");
+		}
+	});
+
+</script>
+<script>
+	// Get all the navigation links
+	var navLinks = document.querySelectorAll('.nav-items');
+
+	// Add event listener for scroll
+	window.addEventListener('scroll', function () {
+		// Loop through each navigation link
+		navLinks.forEach(function (link) {
+			// Get the target section based on the href value
+			var targetId = link.getAttribute('href').substring(1);
+			var targetSection = document.getElementById(targetId);
+
+			// Check if the section is in the viewport
+			var rect = targetSection.getBoundingClientRect();
+			if (rect.top <= 0 && rect.bottom >= 0) {
+				// Add the 'active' class to the corresponding link
+				link.classList.add('active');
+			} else {
+				// Remove the 'active' class if the section is not in the viewport
+				link.classList.remove('active');
+			}
+		});
+	});
+</script>
+
+
+
+
+</body>
+
+</html>
